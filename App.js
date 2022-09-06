@@ -6,25 +6,20 @@ export default function App() {
   
   const [number1, setNumber1] = useState(0);
   const [number2, setNumber2] = useState(0);
-  const [result, setResult] = useState(0);
 
-  const [text, setText] = useState('');
+  const [result, setResult] = useState('');
   const [data, setData] = useState([]);
 
   const plusPressed = () => {
-    setResult(parseInt(number1) + parseInt(number2));
-    setData([...data, { key: text }]);
-    console.log(setData([...data, { key: text }])); 
-    setText(number1 + ' - ' + number2 + ' = ' + result);
-    console.log(text); 
+    const endResult = parseInt(number1) + parseInt(number2);
+    setResult(endResult);
+    setData([...data, { key: number1 + ' + ' + number2 + ' = ' + endResult}]);
   }
 
   const minusPressed = () => {
-    setResult(parseInt(number1) - parseInt(number2));
-    setData([...data, { key: text }]);
-    setText(number1 + ' - ' + number2 + ' = ' + result);
-    console.log(number1 + ' + ' + number2 + ' = ' + result); 
-    console.log(setData([...data, { key: text }])); 
+    const endResult = parseInt(number1) - parseInt(number2);
+    setResult(endResult);
+    setData([...data, { key: number1 + ' - ' + number2 + ' = ' + endResult}]);
   }
 
   return (
